@@ -30,51 +30,36 @@ function capitalize(string) {
 }
 //Function to initiate playing a game
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerPlay();
-    computerSelection = computerPlay();
     //Determination of the winner/loser
     const playerWins = 'playerWins';
     const computerWins = 'computerWins';
     const remis = 'remis';
+    const youWinPrint = `You Win! ${playerSelection} beats ${computerSelection}`;
+    const youLosePrint = `You Lose! ${computerSelection} beats ${playerSelection}`;
     if (playerSelection == "Rock" && computerSelection == "Paper") {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+        console.log(youLosePrint);
         return computerWins;
     } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+        console.log(youLosePrint);
         return computerWins;
     } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+        console.log(youLosePrint);
         return computerWins;
     } else if (playerSelection == "Paper" && computerSelection == "Rock") {
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+        console.log(youWinPrint);
         return playerWins;
     } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+        console.log(youWinPrint);
         return playerWins;
     } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+        console.log(youWinPrint);
         return playerWins;
     } else {
         console.log('Remis!')
         return remis;
     }
 }
-//Play the Game function
-function playGame() {
-    let playerScore = 0;
-    let computerScore = 0;
-    for (let i = 0; i < 3; i++) {
-        const roundResult = playRound();
-        if (roundResult == "playerWins") {
-            ++playerScore;
-        } else if (roundResult == "computerWins") {
-            ++computerScore
-        } else {
-            --playerScore;
-            --computerScore;
-        }
-        console.log(`Your score = ${playerScore} vs Computer score = ${computerScore}`);
-    }
+function determineEndResult(playerScore, computerScore) {
     const finalPlayerWinner = 'Hurray! You are the final WINNER!';
     const finalPlayerLoser = 'Boooh! You are the final LOOOSER!';
     const remis = 'Soo lame! A draw!'
@@ -85,4 +70,22 @@ function playGame() {
     } else {
         return remis;
     }
+}
+//Play the Game function
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 0; i < 3; i++) {
+        const roundResult = playRound(playerPlay(), computerPlay());
+        if (roundResult == "playerWins") {
+            ++playerScore;
+        } else if (roundResult == "computerWins") {
+            ++computerScore
+        } else {
+            --playerScore;
+            --computerScore;
+        }
+        console.log(`Your score = ${playerScore} vs Computer score = ${computerScore}`);
+    }
+    return determineEndResult(playerScore, computerScore);
 }
