@@ -4,14 +4,15 @@
 //Returns a random selection between rock, paper and scissors
 function computerPlay() {
     const randNum = Math.floor(Math.random() * 3);
-    if (randNum == 0) {
-        return "Rock";
-    } else if (randNum == 1) {
-        return "Paper";
-    } else if (randNum == 2) {
-        return "Scissors";
-    } else {
-        console.log("Math is wrong! Or was it just me?")
+    switch (randNum) {
+        case 0:
+            return "Rock";
+        case 1:
+            return "Paper";
+        case 2:
+            return "Scissors";
+        default:
+            console.log("Math is wrong! Or is it just me?");
     }
 }
 //Returns a formated version of players selection after validating the user input
