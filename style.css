@@ -1,9 +1,54 @@
-/*============================================= Global ============================================*/
-
 body, html{
     height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto';
+}
+
+header{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 50px 0 50px;
+    padding: 50px 0 0 0;
+}
+
+.score-counter{
+    text-align: center;
+}
+
+
+#weaponselect-section{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.weapon-selector{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: rgb(197, 197, 18);
+    background-color: antiquewhite;
+
+}
+
+#start-section{
+
+}
+
+#start-button{
+
+}
+
+.active{
+  display: none !important;
+}
+.center{
+    text-align: center;
 }

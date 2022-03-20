@@ -14,6 +14,46 @@
 
 <body>
 
+    <header>
+        <div class="score-counter">
+            <p>You</p>
+            <p id="human-score">0</p>
+        </div>
+        <div id="header">
+            <h2>Rock Paper Scissors</h2>
+        </div>
+        <div class="score-counter">
+            <p>PC</p>
+            <p id="computer-score">0</p>
+        </div>
+    </header>
+    <main>
+        <section id="start-section" class="center">
+            <button type="button" id="start-button">Start Game</button>
+        </section>
+        <section id="weaponselect-section" class="active">
+            <div id="rock" class="weapon-selector">
+                <p>🧱</p>
+            </div>
+            <div id="paper" class="weapon-selector">
+                <p>📜</p>
+            </div>
+            <div id="scissors" class="weapon-selector">
+                <p>✂</p>
+            </div>
+        </section>
+        <section id="interim-result-section" class="active center">
+            <button type="button" id="next-button">Next Round</button>
+            <p id="interim-result-text"></p>
+        </section>
+        <section id="end-result-section" class="active center">
+            <p id="end-result-text">End Result</p>
+            <button type="button" id="new-game-button">New Game</button>
+        </section>
+
+    </main>
+
+
 </body>
 
 </html>
