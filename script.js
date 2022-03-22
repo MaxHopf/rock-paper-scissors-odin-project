@@ -8,8 +8,9 @@ let roundCounter = 1;
 
 //DOM Element Selection
 //Sections
-const weaponselectSection = document.querySelector('#weaponselect-section');
+const counterSection = document.querySelector('#counter-section');
 const startSection = document.querySelector('#start-section');
+const weaponselectSection = document.querySelector('#weaponselect-section');
 const interimResultSection = document.querySelector('#interim-result-section');
 const endResultSection = document.querySelector('#end-result-section');
 //Buttons
@@ -29,6 +30,7 @@ const endResultText = document.querySelector('#end-result-text');
 startButton.addEventListener('click', () => {
     toggleDisplay(startSection);
     toggleDisplay(weaponselectSection);
+    toggleDisplay(counterSection);
 });
 nextButton.addEventListener('click', () => {
     toggleDisplay(interimResultSection);
@@ -40,7 +42,6 @@ newGameButton.addEventListener('click', () => {
     roundCounter = 1;
     toggleDisplay(nextButton);
     toggleDisplay(weaponselectSection);
-    toggleDisplay(interimResultSection);
     toggleDisplay(endResultSection);
     setScore(humanScore, computerScore);
 });
@@ -125,10 +126,13 @@ function printInterimResult(winner, humanSelection, computerSelection) {
 function printEndResult(humanScore, computerScore) {
     if (humanScore > computerScore) {
         endResultText.textContent = `Hurray! You are the final WINNER!`;
+        return `Hurray! You are the final WINNER!`;
     } else if (computerScore > humanScore) {
         endResultText.textContent = `Boooh! You are the final LOOOSER!`;
+        return `Boooh! You are the final LOOOSER!`;
     } else {
         endResultText.textContent = `Soo lame! A draw!`;
+        return `Soo lame! A draw!`;
     }
 }
 //Final Round Event
@@ -138,6 +142,7 @@ function lastRound() {
         printEndResult(humanScore, computerScore);
         toggleDisplay(endResultSection);
         toggleDisplay(nextButton);
+        displayOff(interimResultSection);
     }
 }
 //Set Score
@@ -155,5 +160,9 @@ function toggleDisplay(sectionName) {
 }
 //Switch Display activity on
 function displayOn(sectionName) {
+    sectionName.classList.remove("active");
+}
+//Swtich Display off
+function displayOff(sectionName) {
     sectionName.classList.add("active");
 }

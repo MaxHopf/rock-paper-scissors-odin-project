@@ -1,51 +1,126 @@
-body, html{
+main, body, html{
     height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
+    background-color: var(--color-blue);
+    font-family: 'Share Tech Mono', monospace;
+    /* font-family: 'Roboto';
+    font-family: 'Share Tech Mono', monospace; */
 }
-
-header{
+:root{
+    --color-yellow: #ffc83d;
+    --color-black: #0a0a0a;
+    --color-blue: #767B87;
+    --color-dark-blue: #06062E;
+    --color-light-grey: #d0d0d77c;
+    --upper-sections-height: 15rem;
+}
+button{
+    font-family: 'Share Tech Mono', monospace;
+}
+#start-section{
     display: flex;
-    justify-content: space-evenly;
-    margin: 0 50px 0 50px;
-    padding: 50px 0 0 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
-
-.score-counter{
-    text-align: center;
+#start-section > h2{
+    font-family: 'VT323', monospace;
+    color: var(--color-yellow);
+    text-shadow: 0px 0px 10px var(--color-black);
+    font-size: 64px;
 }
+#start-section > button{
+    display: block;
+    width: fit-content;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-black);
+    background: none;
+    border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
 
-
+}
+#start-section > button:hover{
+    color: var(--color-yellow);
+    text-shadow: 0px 0px 5px var(--color-black);
+    transition-duration: 0.6s;
+}
 #weaponselect-section{
     display: flex;
     justify-content: center;
-    gap: 100px;
+    text-align: center;
+    gap: 5%;
+    flex-wrap: wrap;
+    height: var(--upper-sections-height);
+    /* padding-top: 10%; */
 }
-
+#weaponselect-section > .header {
+    flex: 0 0 100%;
+    font-size: 32px;
+    font-weight: 400;
+} 
 .weapon-selector{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 100px;
+    height: 85px;
+    width: 85px;
     border-radius: 15px;
     border-style: solid;
-    border-width: 1.5px;
-    border-color: rgb(197, 197, 18);
-    background-color: antiquewhite;
-
+    border-width: 2px;
+    border-color: var(--color-yellow);
+    font-size: 32px;
+    background-color: var(--color-light-grey);
 }
-
-#start-section{
-
+.weapon-selector:hover{
+    background-color: var(--color-yellow);
+    scale: 1.1;
+    box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
 }
-
-#start-button{
-
+#counter-section {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    font-size: 24px;
 }
-
+#interim-result-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: var(--upper-sections-height);
+}
+#interim-result-text{
+    font-size: 24px;
+}
+#end-result-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: var(--upper-sections-height);
+}
+#end-result-text{
+    font-size: 32px;
+}
+.normal-button{
+    display: block;
+    width: fit-content;
+    font-size: 26px;
+    font-weight: 800;
+    background-color: var(--color-light-grey);
+    border: none;
+}
+.normal-button:hover{
+    background-color: var(--color-yellow);
+    scale: 1.1;
+    box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
+}
 .active{
   display: none !important;
 }

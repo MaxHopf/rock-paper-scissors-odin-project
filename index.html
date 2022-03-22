@@ -10,45 +10,54 @@
     <link rel="stylesheet" href="style.css">
     <!-- Embed JS script file -->
     <script src="script.js" defer></script>
+    <!-- Embed awesome font icons -->
+    <script src="https://kit.fontawesome.com/ba9408f8f7.js" crossorigin="anonymous"></script>
+    <!-- Embed google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <header>
-        <div class="score-counter">
-            <p>You</p>
-            <p id="human-score">0</p>
-        </div>
-        <div id="header">
-            <h2>Rock Paper Scissors</h2>
-        </div>
-        <div class="score-counter">
-            <p>PC</p>
-            <p id="computer-score">0</p>
-        </div>
-    </header>
     <main>
         <section id="start-section" class="center">
-            <button type="button" id="start-button">Start Game</button>
+            <h2>Rock Paper Scissors</h2>
+            <button type="button" id="start-button">Start Fight</button>
         </section>
-        <section id="weaponselect-section" class="active">
+        <section id="weaponselect-section" class="active flex">
+            <div class="header">
+                <p>Choose your weapon!</p>
+            </div>
             <div id="rock" class="weapon-selector">
-                <p>🧱</p>
+                <p>✊</p>
             </div>
             <div id="paper" class="weapon-selector">
-                <p>📜</p>
+                <p>✋</p>
             </div>
             <div id="scissors" class="weapon-selector">
-                <p>✂</p>
+                <p>&#9996;</p>
             </div>
         </section>
         <section id="interim-result-section" class="active center">
-            <button type="button" id="next-button">Next Round</button>
-            <p id="interim-result-text"></p>
+            <p id="interim-result-text">Interim Result</p>
+            <button type="button" id="next-button" class="normal-button">Next Round</button>
         </section>
         <section id="end-result-section" class="active center">
             <p id="end-result-text">End Result</p>
-            <button type="button" id="new-game-button">New Game</button>
+            <button type="button" id="new-game-button" class="normal-button">New Game</button>
+        </section>
+        <section id="counter-section" class="active">
+            <div class="center">
+                <p>You</p>
+                <p id="human-score">0</p>
+            </div>
+            <div>
+                <p>vs</p>
+            </div>
+            <div class="center">
+                <p>PC</p>
+                <p id="computer-score">0</p>
+            </div>
         </section>
 
     </main>
